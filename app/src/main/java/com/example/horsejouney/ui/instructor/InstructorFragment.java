@@ -1,31 +1,29 @@
-package com.example.horsejouney.ui.slideshow;
+package com.example.horsejouney.ui.instructor;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+import com.example.horsejouney.databinding.FragmentInstrustorBinding;
 
-import com.example.horsejouney.databinding.FragmentSlideshowBinding;
+public class InstructorFragment extends Fragment {
 
-public class SlideshowFragment extends Fragment {
-
-    private FragmentSlideshowBinding binding;
+    private FragmentInstrustorBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        SlideshowViewModel slideshowViewModel =
-                new ViewModelProvider(this).get(SlideshowViewModel.class);
+        InstructorViewModel instructorViewModel =
+                new ViewModelProvider(this).get(InstructorViewModel.class);
 
-        binding = FragmentSlideshowBinding.inflate(inflater, container, false);
+        binding = FragmentInstrustorBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textSlideshow;
-        slideshowViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
+        final TextView textView = binding.textInstructor;
+        instructorViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
         return root;
     }
 

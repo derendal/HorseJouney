@@ -1,4 +1,4 @@
-package com.example.horsejouney.ui.home;
+package com.example.horsejouney.ui.qanda;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -9,23 +9,20 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+import com.example.horsejouney.databinding.FragmentQandaBinding;
 
-import com.example.horsejouney.databinding.FragmentHomeBinding;
 
-public class HomeFragment extends Fragment {
+public class QandaFragment extends Fragment {
 
-    private FragmentHomeBinding binding;
+    private FragmentQandaBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        HomeViewModel homeViewModel =
-                new ViewModelProvider(this).get(HomeViewModel.class);
+        QandaViewModel qandaViewModel =
+                new ViewModelProvider(this).get(QandaViewModel.class);
 
-        binding = FragmentHomeBinding.inflate(inflater, container, false);
+        binding = FragmentQandaBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
-
-        final TextView textView = binding.textHome;
-        homeViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
         return root;
     }
 

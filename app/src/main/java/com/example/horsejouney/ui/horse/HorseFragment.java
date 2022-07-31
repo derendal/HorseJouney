@@ -1,34 +1,31 @@
-package com.example.horsejouney.ui.gallery;
+package com.example.horsejouney.ui.horse;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+import com.example.horsejouney.databinding.FragmentHorseBinding;
 
-import com.example.horsejouney.databinding.FragmentGalleryBinding;
+public class HorseFragment extends Fragment {
 
-public class GalleryFragment extends Fragment {
-
-    private FragmentGalleryBinding binding;
+    private FragmentHorseBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        GalleryViewModel galleryViewModel =
-                new ViewModelProvider(this).get(GalleryViewModel.class);
+        HorseViewModel horseViewModel =
+                new ViewModelProvider(this).get(HorseViewModel.class);
 
-        binding = FragmentGalleryBinding.inflate(inflater, container, false);
+        binding = FragmentHorseBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textGallery;
-        galleryViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
+        final TextView textView = binding.textHorse;
+        horseViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
         return root;
     }
-
     @Override
     public void onDestroyView() {
         super.onDestroyView();

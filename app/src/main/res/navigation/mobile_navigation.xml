@@ -3,23 +3,29 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/nav_home">
+    app:startDestination="@+id/nav_rider">
 
     <fragment
-        android:id="@+id/nav_home"
-        android:name="com.example.horsejouney.ui.home.HomeFragment"
-        android:label="@string/menu_home"
-        tools:layout="@layout/fragment_home" />
+        android:id="@+id/nav_rider"
+        android:name="com.example.horsejouney.ui.rider.RiderFragment"
+        android:label="@string/menu_rider"
+        tools:layout="@layout/fragment_rider" />
 
     <fragment
-        android:id="@+id/nav_gallery"
-        android:name="com.example.horsejouney.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
+        android:id="@+id/nav_horse"
+        android:name="com.example.horsejouney.ui.horse.HorseFragment"
+        android:label="@string/menu_horse"
+        tools:layout="@layout/fragment_horse" />
 
     <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.example.horsejouney.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+        android:id="@+id/nav_instructor"
+        android:name="com.example.horsejouney.ui.instructor.InstructorFragment"
+        android:label="@string/menu_instructor"
+        tools:layout="@layout/fragment_instrustor" />
+    <fragment
+        android:id="@+id/nav_qanda"
+        android:name="com.example.horsejouney.ui.qanda.QandaFragment"
+        android:label="@string/menu_qanda"
+        tools:layout="@layout/fragment_qanda" />
+
 </navigation>
